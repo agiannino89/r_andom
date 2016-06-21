@@ -5,7 +5,7 @@
 # R-Code for Applied Exercises 8
 #
 # Author: Antonio Giannino
-# ============================================
+# ============================================ 
 rm(list = ls());
 #
 # This exercise relates to the College data set, which can be found in the file 
