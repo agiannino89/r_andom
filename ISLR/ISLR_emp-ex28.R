@@ -6,7 +6,7 @@
 #
 # Author: Antonio Giannino
 # ============================================
-
+rm(list = ls());
 #
 # This exercise relates to the College data set, which can be found in the file 
 # College.csv. It contains a number of variables for 777 different universities and 
