@@ -5,7 +5,7 @@
 # R-Code for Applied Exercises 9
 #
 # Author: Antonio Giannino
-# ============================================
+# ============================================ 
 rm(list = ls());
 #
 # This exercise involves the Auto data set studied in the lab. 
