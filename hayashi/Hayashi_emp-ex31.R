@@ -1,9 +1,11 @@
+# ===============================================
 # Fumio Hayashi - Econometrics
 #           Chapter 3
 #
 # R-Code for Empirical Exercises 3.1
 #
 # Author: Stefan Bruder and Antonio Giannino
+# ===============================================
 
 rm(list = ls());
 
