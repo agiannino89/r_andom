@@ -5,7 +5,7 @@
 # R-Code for Applied Exercises 10
 #
 # Author: Antonio Giannino
-# ============================================
+# ============================================ 
 rm(list = ls());
 #
 # This exercise involves the Boston housing data set.
