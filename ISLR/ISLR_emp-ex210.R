@@ -39,28 +39,27 @@ plot(Boston$ptratio, Boston$crim)
 plot(Boston$black, Boston$crim)
 plot(Boston$lstat, Boston$crim)
 plot(Boston$medv, Boston$crim)
-
-
+#
 # (d) Do any of the suburbs of Boston appear to have particularly high crime rates? 
 # Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.
-plot(Boston$crim)
+hist(Boston$crim, breaks = 50)
 range(Boston$crim)
 which(Boston$crim > 50)
 
-plot(Boston$tax)
+hist(Boston$tax, breaks = 50)
 range(Boston$tax)
 which(Boston$tax > 600)
 
-plot(Boston$ptratio)
+hist(Boston$ptratio, breaks = 50)
 range(Boston$ptratio)
 which(Boston$ptratio > 21)
-
+# 
 # (e) How many of the suburbs in this data set bound the Charles river?
 sum(Boston$chas)
-
+#
 # (f) What is the median pupil-teacher ratio among the towns in this data set?
 median(Boston$ptratio)
-
+#
 # (g) Which suburb of Boston has lowest median value of owner-occupied homes? 
 which.min(Boston$medv)
 # What are the values of the other predictors for that suburb, and how do those 

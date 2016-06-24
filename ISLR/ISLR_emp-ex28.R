@@ -62,7 +62,8 @@ summary(college)
 pairs(college[,1:10])
 ## iii. Use the plot() function to produce side-by-side boxplots of Outstate versus 
 ## Private.
-plot(college$Private, college$Outstate)
+plot(college$Private, college$Outstate, xlab = "Private University", 
+     ylab ="Out of State tuition in USD", main = "Outstate Tuition Plot")
 ## iv. Create a new qualitative variable, called Elite, by binning the Top10perc 
 ## variable. We are going to divide universities into two groups based on whether 
 ## or not the proportion of students coming from the top 10% of their high school 
@@ -75,14 +76,15 @@ college <- data.frame(college, Elite)
 ## Now use the plot() function to produce side-by-side boxplots of Outstate versus 
 ## Elite.
 summary(college)
-plot(college$Elite, college$Outstate)
+plot(college$Elite, college$Outstate, xlab = "Elite University",
+     ylab ="Out of State tuition in USD", main = "Outstate Tuition Plot")
 ## vi. Use the hist() function to produce some histograms with differing numbers of 
 ## bins for a few of the quantitative vari- ables. You may find the command 
 ## par(mfrow=c(2,2)) useful: it will divide the print window into four regions so that 
 ## four plots can be made simultaneously. Modifying the arguments to this function 
 ## will divide the screen in other ways.
 par(mfrow =c(2,2))
-hist(college$Apps)
-hist(college$Accept)
-hist(college$Enroll)
-hist(college$Grad.Rate)
+hist(college$Apps, xlab = "Apps", ylab = "Count", main = "Apps")
+hist(college$Accept, xlab = "Accept", ylab = "Count", main = "Accept")
+hist(college$Enroll, xlab = "Enroll", ylab = "Count", main = "Enroll")
+hist(college$Grad.Rate, xlab = "Grad Rate", ylab = "Count", main = "Grad Rate")
