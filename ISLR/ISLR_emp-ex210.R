@@ -19,8 +19,8 @@ head(Boston)
 # How many rows are in this data set? How many columns? 
 # What do the rows and columns represent? See the help file.
 #
-# (b) Make some pairwise scatterplots of the predictors (columns) in this data set. 
-# Describe your findings.
+# (b) Make some pairwise scatterplots of the predictors (columns) in this data
+# set. Describe your findings.
 pairs(Boston)
 #
 # (c) Are any of the predictors associated with per capita crime rate? 
@@ -40,8 +40,8 @@ plot(Boston$black, Boston$crim)
 plot(Boston$lstat, Boston$crim)
 plot(Boston$medv, Boston$crim)
 #
-# (d) Do any of the suburbs of Boston appear to have particularly high crime rates? 
-# Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.
+# (d) Do any of the suburbs of Boston appear to have particularly high crime
+# rates? Tax rates? Pupil-teacher ratios? Comment on the range of each predictor.
 hist(Boston$crim, breaks = 50)
 range(Boston$crim)
 which(Boston$crim > 50)
@@ -63,13 +63,13 @@ median(Boston$ptratio)
 # (g) Which suburb of Boston has lowest median value of owner-occupied homes? 
 which.min(Boston$medv)
 # What are the values of the other predictors for that suburb, and how do those 
-# values compare to the overall ranges for those predictors? Comment on your findings.
+# values compare to the overall ranges for those predictors? Comment on your 
+# findings.
 Boston[which.min(Boston$medv),]
 summary(Boston)
 # (h) In this data set, how many of the suburbs average more than seven rooms per 
-# dwelling? More than eight rooms per dwelling? Comment on the suburbs that average 
-# more than eight rooms per dwelling.
+# dwelling? More than eight rooms per dwelling? Comment on the suburbs that 
+# average more than eight rooms per dwelling.
 sum(Boston$rm > 7)
 sum(Boston$rm > 8)
-
 

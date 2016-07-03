@@ -8,13 +8,14 @@
 # ============================================ 
 rm(list = ls());
 #
-# This question involves the use of simple linear regression on the Auto data set.
+# This question involves the use of simple linear regression on the Auto data 
+# set.
 library("ISLR")
 data(Auto)
 #
-# (a) Use the lm() function to perform a simple linear regression with mpg as the 
-# response and horsepower as the predictor. Use the summary() function to print the 
-# results. Comment on the output. 
+# (a) Use the lm() function to perform a simple linear regression with mpg as 
+# the response and horsepower as the predictor. Use the summary() function to 
+# print the results. Comment on the output. 
 reg <- lm(mpg ~ horsepower, data = Auto)
 summary(reg)
 # For example:
@@ -25,13 +26,13 @@ summary(reg)
 ## iii. Is the relationship between the predictor and the response positive or 
 ## negative?
 ## Negative.
-## iv. What is the predicted mpg associated with a horsepower of 98? What are the 
-## associated 95 % confidence and prediction intervals?
+## iv. What is the predicted mpg associated with a horsepower of 98? What are
+## the associated 95 % confidence and prediction intervals?
 predict(reg, data.frame(horsepower = 98), interval = "confidence")
 predict(reg, data.frame(horsepower = 98), interval = "prediction")
 #
-# (b) Plot the response and the predictor. Use the abline() function to display the 
-# least squares regression line.
+# (b) Plot the response and the predictor. Use the abline() function to display 
+# the least squares regression line.
 plot(Auto$horsepower, Auto$mpg)
 abline(reg, col = "red")
 #
