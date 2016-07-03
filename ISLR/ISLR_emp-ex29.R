@@ -18,26 +18,27 @@ Auto$cylinders <- as.factor(Auto$cylinders)
 Auto$origin <- as.factor(Auto$origin)
 Auto$year <- as.factor(Auto$year)
 Auto <- na.omit(Auto)
-idx_quant <- sapply(Auto, is.numeric)
-Auto_quant <- Auto[, idx_quant]
+idx.quant <- sapply(Auto, is.numeric)
+Auto.quant <- Auto[, idx.quant]
 #
-# (b) What is the range of each quantitative predictor? You can answer this using the 
-# range() function.
+# (b) What is the range of each quantitative predictor? You can answer this 
+# using the range() function.
 # (c) What is the mean and standard deviation of each quantitative predictor?
-for (i in 1:dim(Auto_quant)[2]) {
+for (i in 1:dim(Auto.quant)[2]) {
   print(paste0("Variable: ", i, " Range:"))
-  print(range(Auto_quant[,i]))
-  print(paste0("Mean: ", mean(Auto_quant[,i])))
-  print(paste0("Standard Deviation: ", sd((Auto_quant[,i]))))
+  print(range(Auto.quant[,i]))
+  print(paste0("Mean: ", mean(Auto.quant[,i])))
+  print(paste0("Standard Deviation: ", sd((Auto.quant[,i]))))
 }
-# (d) Now remove the 10th through 85th observations. What is the range, mean, and 
-# standard deviation of each predictor in the subset of the data that remains?
-Auto_quant_sub <- Auto_quant[-c(10:85),]
-for (i in 1:dim(Auto_quant_sub)[2]) {
+# (d) Now remove the 10th through 85th observations. What is the range, mean, 
+# and standard deviation of each predictor in the subset of the data that 
+# remains?
+Auto.quant.sub <- Auto.quant[-c(10:85),]
+for (i in 1:dim(Auto.quant.sub)[2]) {
   print(paste0("Variable: ", i, ", Range:"))
-  print(range(Auto_quant_sub[,i]))
-  print(paste0("Mean: ", mean(Auto_quant_sub[,i])))
-  print(paste0("Standard Deviation: ",sd((Auto_quant_sub[,i]))))
+  print(range(Auto.quant.sub[,i]))
+  print(paste0("Mean: ", mean(Auto.quant.sub[,i])))
+  print(paste0("Standard Deviation: ",sd((Auto.quant.sub[,i]))))
 }
 
 # (e) Using the full data set, investigate the predictors graphically, using 
@@ -54,9 +55,9 @@ plot(Auto$displacement, Auto$acceleration)
 plot(Auto$year, Auto$acceleration)
 plot(Auto$year, Auto$weight)
 #
-# (f) Suppose that we wish to predict gas mileage (mpg) on the basis of the other 
-# variables. Do your plots suggest that any of the other variables might be useful 
-# in predicting mpg? Justify your answer.
+# (f) Suppose that we wish to predict gas mileage (mpg) on the basis of the 
+# other variables. Do your plots suggest that any of the other variables might 
+# be useful in predicting mpg? Justify your answer.
 plot(Auto$cylinders, Auto$mpg)
 plot(Auto$displacement, Auto$mpg)
 plot(Auto$horsepower, Auto$mpg)

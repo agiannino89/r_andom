@@ -9,8 +9,8 @@
 rm(list = ls());
 #
 # This exercise relates to the College data set, which can be found in the file 
-# College.csv. It contains a number of variables for 777 different universities and 
-# colleges in the US. The variables are:
+# College.csv. It contains a number of variables for 777 different universities 
+# and colleges in the US. The variables are:
 # • Private : Public/private indicator
 # • Apps : Number of applications received
 # • Accept : Number of applicants accepted
@@ -43,46 +43,47 @@ college <- read.csv("Datasets/College.csv")
 # Try the following commands:
 rownames(college) <- college[,1]
 # You should see that there is now a row.names column with the name of each 
-# university recorded. This means that R has given each row a name corresponding 
-# to the appropriate university. R will not try to perform calculations on the 
-# row names. However, we still need to eliminate the first column in the data 
-# where the names are stored. Try
+# university recorded. This means that R has given each row a name 
+# corresponding to the appropriate university. R will not try to perform 
+# calculations on the row names. However, we still need to eliminate the first
+# column in the data where the names are stored. Try
 college <- college[,-1]
 # Now you should see that the first data column is Private. 
-# Note that another column labeled row.names now appears before the Private column. 
-# However, this is not a data column but rather the name that R is giving to each row.
+# Note that another column labeled row.names now appears before the Private 
+# column. However, this is not a data column but rather the name that R is 
+# giving to each row.
 #
 # (c) 
-## i. Use the summary() function to produce a numerical summary of the variables in 
-## the data set.
+## i. Use the summary() function to produce a numerical summary of the 
+## variables in the data set.
 summary(college)
-## ii. Use the pairs() function to produce a scatterplot matrix of the first ten 
-## columns or variables of the data. Recall that you can reference the first ten 
-## columns of a matrix A using A[,1:10].
+## ii. Use the pairs() function to produce a scatterplot matrix of the first 
+## ten columns or variables of the data. Recall that you can reference the 
+## first ten columns of a matrix A using A[,1:10].
 pairs(college[,1:10])
-## iii. Use the plot() function to produce side-by-side boxplots of Outstate versus 
-## Private.
+## iii. Use the plot() function to produce side-by-side boxplots of Outstate 
+## versus Private.
 plot(college$Private, college$Outstate, xlab = "Private University", 
      ylab ="Out of State tuition in USD", main = "Outstate Tuition Plot")
-## iv. Create a new qualitative variable, called Elite, by binning the Top10perc 
-## variable. We are going to divide universities into two groups based on whether 
-## or not the proportion of students coming from the top 10% of their high school 
-## classes exceeds 50 %.
+## iv. Create a new qualitative variable, called Elite, by binning the 
+## Top10perc variable. We are going to divide universities into two groups
+## based on whether or not the proportion of students coming from the top 10%
+## of their high school classes exceeds 50 %.
 Elite <- rep("No", nrow(college))
 Elite[college$Top10perc > 50] <- "Yes"
 Elite <- as.factor(Elite)
 college <- data.frame(college, Elite)
 ## v. Use the summary() function to see how many elite univer- sities there are. 
-## Now use the plot() function to produce side-by-side boxplots of Outstate versus 
-## Elite.
+## Now use the plot() function to produce side-by-side boxplots of Outstate
+## versus Elite.
 summary(college)
 plot(college$Elite, college$Outstate, xlab = "Elite University",
      ylab ="Out of State tuition in USD", main = "Outstate Tuition Plot")
-## vi. Use the hist() function to produce some histograms with differing numbers of 
-## bins for a few of the quantitative vari- ables. You may find the command 
-## par(mfrow=c(2,2)) useful: it will divide the print window into four regions so that 
-## four plots can be made simultaneously. Modifying the arguments to this function 
-## will divide the screen in other ways.
+## vi. Use the hist() function to produce some histograms with differing 
+## numbers of bins for a few of the quantitative vari- ables. You may find the
+## command par(mfrow=c(2,2)) useful: it will divide the print window into four
+## regions so that four plots can be made simultaneously. Modifying the 
+## arguments to this function will divide the screen in other ways.
 par(mfrow =c(2,2))
 hist(college$Apps, xlab = "Apps", ylab = "Count", main = "Apps")
 hist(college$Accept, xlab = "Accept", ylab = "Count", main = "Accept")
